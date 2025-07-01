@@ -185,7 +185,7 @@ export const ENVS = z.object({
     NANGO_DATABASE_URL: z.string().url().optional(),
     NANGO_DB_READ_URL: z.string().url().optional(),
     NANGO_DB_HOST: z.string().optional().default('localhost'),
-    NANGO_DB_PORT: z.coerce.number().optional().default(5432),
+    NANGO_DB_PORT: z.coerce.number().optional().default(5444),
     NANGO_DB_USER: z.string().optional().default('nango'),
     NANGO_DB_NAME: z.string().optional().default('nango'),
     NANGO_DB_PASSWORD: z.string().optional().default('nango'),
