@@ -8,7 +8,7 @@ services:
             POSTGRES_USER: nango
             POSTGRES_DB: nango
         ports:
-            - '${NANGO_DB_PORT:-5432}:5432'
+            - '${NANGO_DB_PORT:-5444}:5444'
         volumes:
             - ./nango-data:/var/lib/postgresql/data
         networks:
@@ -30,7 +30,7 @@ services:
             - NANGO_DB_ADDITIONAL_SCHEMAS
             - NANGO_DB_POOL_MIN
             - NANGO_DB_POOL_MAX
-            - RECORDS_DATABASE_URL=${RECORDS_DATABASE_URL:-postgresql://nango:nango@nango-db:5432/nango}
+            - RECORDS_DATABASE_URL=${RECORDS_DATABASE_URL:-postgresql://nango:nango@nango-db:5444/nango}
             - SERVER_PORT
             - CSP_REPORT_ONLY=true
             - NANGO_SERVER_URL=${NANGO_SERVER_URL:-http://localhost:3003}
