@@ -6,7 +6,7 @@ import Knex from 'knex';
 
 const BATCH_SIZE = 1000;
 
-const SOURCE_DB_URL = process.env['SOURCE_DB_URL'] || 'postgresql://nango:nango@localhost:5432/nango';
+const SOURCE_DB_URL = process.env['SOURCE_DB_URL'] || 'postgresql://nango:nango@localhost:5444/nango';
 const sourceKnex = Knex({
     client: 'pg',
     connection: {
@@ -20,7 +20,7 @@ const sourceKnex = Knex({
     }
 });
 
-const TARGET_DB_URL = process.env['TARGET_DB_URL'] || 'postgresql://nango:nango@localhost:5432/nango';
+const TARGET_DB_URL = process.env['TARGET_DB_URL'] || 'postgresql://nango:nango@localhost:5444/nango';
 const targetKnex = Knex({
     client: 'pg',
     connection: {
