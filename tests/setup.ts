@@ -39,13 +39,13 @@ async function setupPostgres() {
         .withDatabase(dbName)
         .withUsername(user)
         .withPassword(password)
-        .withExposedPorts(5432)
+        .withExposedPorts(5444)
         .withName(`pg-test-${randomUUID()}`)
         .withWaitStrategy(Wait.forLogMessage('database system is ready to accept connections'))
         .start();
 
     containers.push(pg);
-    const port = pg.getMappedPort(5432);
+    const port = pg.getMappedPort(5444);
 
     process.env['NANGO_DB_PASSWORD'] = password;
     process.env['NANGO_DB_HOST'] = 'localhost';
