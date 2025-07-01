@@ -9,7 +9,7 @@ export function getDbConfig({ timeoutMs }: { timeoutMs: number }): Knex.Config {
     const host = process.env['NANGO_DB_HOST'] || (process.env['SERVER_RUN_MODE'] === 'DOCKERIZED' ? 'nango-db' : 'localhost');
     const url =
         process.env['NANGO_DATABASE_URL'] ||
-        `postgres://${encodeURIComponent(process.env['NANGO_DB_USER'] || 'nango')}:${encodeURIComponent(process.env['NANGO_DB_PASSWORD'] || 'nango')}@${host}:${+(process.env['NANGO_DB_PORT'] || 5432)}/${process.env['NANGO_DB_NAME'] || 'nango'}`;
+        `postgres://${encodeURIComponent(process.env['NANGO_DB_USER'] || 'nango')}:${encodeURIComponent(process.env['NANGO_DB_PASSWORD'] || 'nango')}@${host}:${+(process.env['NANGO_DB_PORT'] || 5444)}/${process.env['NANGO_DB_NAME'] || 'nango'}`;
 
     return {
         client: process.env['NANGO_DB_CLIENT'] || 'pg',
